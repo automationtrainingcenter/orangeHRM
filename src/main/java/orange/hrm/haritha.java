@@ -1,4 +1,4 @@
-spackage orange.hrm;
+package orange.hrm;
 
 public class haritha {
 
