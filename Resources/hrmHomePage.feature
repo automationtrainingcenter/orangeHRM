@@ -11,36 +11,33 @@
 #Background: List of steps run before each of the scenarios
 #""" (Doc Strings)
 #| (Data Tables)
-#@ (Tags/Labels):To group Scenarios 
+#@ (Tags/Labels):To group Scenarios
 #<> (placeholder)
 #""
 ## (Comments)
-
 #Sample Feature Definition Template
 Feature: Login Functionality
-verify Login fuctionality as an admin
+  verify Login fuctionality as an admin
 
-Background: User is in HRM home page
+  Background: User is in HRM home page
 
-Scenario: Login with valid credentials
-validating login functionality with valid username and valid password
- 
-When user enters vaid username
-And valid password
-And click on loginlink
-Then User will get Admin Home page
-And User will get logout link
+  Scenario: Login with valid credentials
+    validating login functionality with valid username and valid password
 
-Scenario: Login with invlaid Credentials
+    When user enters "Admin" in username
+    And enters "admin" as password
+    And click on loginlink
+    Then User will get Admin Home page
+    And User will get logout link
+	@multiple
+  Scenario Outline: Login with invlaid Credentials
+    When user enters "<userName>" in username
+    But enters "<password>" as password
+    And click on loginlink
+    Then User will ask to enter valid username/password
 
-When user enters valid username
-But enters invalid password
-And click on loginlink
-Then User will ask to enter valid username/password
-
-
-
-
-
-
-
+    Examples: 
+      | userName | password |
+      | Admin    | adminn   |
+      | admin    | admin    |
+      | admin    | adminnnn |
