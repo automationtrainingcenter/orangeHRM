@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HRMHomePage {
+public class OHRMHomePage {
 	
 	//username fied
 	@FindBy(id="txtUsername")
@@ -19,7 +19,7 @@ public class HRMHomePage {
 	@FindBy(id="btnLogin")
 	private WebElement loginLink;
 	
-	public HRMHomePage(WebDriver driver){
+	public OHRMHomePage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
 	

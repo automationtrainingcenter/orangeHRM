@@ -16,14 +16,14 @@ import cucumber.api.java.en.When;
 public class TestExecution {
 
 	public WebDriver driver;
-	public HRMHomePage hrmHomePage;
+	public OHRMHomePage hrmHomePage;
 	@Before
 	public void launchApp() {
 		driver = new FirefoxDriver();
-		driver.get("https://opensource.demo.orangehrmlive.com");
+		driver.get("http://opensource.demo.orangehrm.com/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		hrmHomePage = new HRMHomePage(driver);
+		hrmHomePage = new OHRMHomePage(driver);
 	}
 
 	@After
